@@ -74,12 +74,17 @@ The repository includes a public engineering paper as the default sample PDF:
 
 - `data/sample.pdf`
 - Title: `Engineering Properties of Treated Natural Hemp Fiber-Reinforced Concrete`
+- Authors: Xiangming Zhou, Harmeet Saini, and Gediminas Kastiukas
 - Publisher: Frontiers
 - License: CC BY
 
 Article page:
 
 - [Frontiers article](https://www.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2017.00033/full)
+
+Attribution:
+
+- Zhou, X., Saini, H., and Kastiukas, G. (2017). `Engineering Properties of Treated Natural Hemp Fiber-Reinforced Concrete`. Frontiers in Built Environment. Used here under the CC BY license.
 
 ## Tech Stack
 
