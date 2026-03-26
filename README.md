@@ -68,6 +68,19 @@ data/
   sample.pdf
 ```
 
+## Default Sample Document
+
+The repository includes a public engineering paper as the default sample PDF:
+
+- `data/sample.pdf`
+- Title: `Engineering Properties of Treated Natural Hemp Fiber-Reinforced Concrete`
+- Publisher: Frontiers
+- License: CC BY
+
+Article page:
+
+- [Frontiers article](https://www.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2017.00033/full)
+
 ## Tech Stack
 
 - Python
@@ -135,7 +148,7 @@ python src/main.py "What are the main instructions in this document?"
 ```bash
 source .venv/bin/activate
 python src/retrieval/vector_store.py
-python src/main.py "Summarize the key submission instructions."
+python src/main.py "What does the document say about the mechanical properties of treated hemp fiber-reinforced concrete?"
 ```
 
 ## Design Decisions
