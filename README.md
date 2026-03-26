@@ -2,21 +2,42 @@
 
 Engineering Copilot is a compact Retrieval-Augmented Generation (RAG) project for engineering PDFs. It turns a PDF into a searchable vector store, retrieves the most relevant chunks for a question, and generates a grounded answer with citations.
 
-This project is intentionally small and readable. The goal is to demonstrate the core moving parts of a RAG system clearly rather than hide them behind a large framework.
+This project is intentionally small and readable. The goal is to show the core moving parts of a RAG system clearly, without hiding them behind a large framework.
 
-## Demo Goal
+## Project Goal
 
-This repository demonstrates how to build an end-to-end document question-answering pipeline:
+The goal of this project is to build a system that can answer questions about an engineering PDF by using the document itself as evidence.
+
+Instead of asking an LLM to answer from memory alone, this project first retrieves relevant text from the PDF and then gives that retrieved context to the model. That makes the final answer more grounded, more relevant to the document, and easier to trace back to a source page.
+
+In short, this project demonstrates how to build an end-to-end document question-answering pipeline:
 
 ```text
 PDF -> page extraction -> chunking -> embeddings -> ChromaDB -> retrieval -> LLM answer
 ```
 
-The system is designed to answer questions about engineering documents using retrieved document context instead of relying only on the LLM's internal knowledge.
+## Core Idea
+
+Large language models are powerful, but they can still:
+
+- answer from general knowledge instead of your document
+- miss important details in long PDFs
+- hallucinate facts that are not actually in the source material
+
+RAG helps solve this by adding a retrieval step before generation:
+
+1. read the PDF
+2. split it into smaller chunks
+3. convert those chunks into embeddings
+4. store them in a vector database
+5. retrieve the most relevant chunks for a user question
+6. ask the LLM to answer using the retrieved chunks as context
+
+That is the main idea behind this project: combine document retrieval with LLM generation so answers are grounded in the actual engineering document.
 
 ## Why This Project Matters
 
-This project focuses on the practical ideas behind RAG:
+This project is useful because it demonstrates the practical ideas behind modern document-based AI systems:
 
 - extracting text from source documents
 - preserving page-level metadata for citation
@@ -24,6 +45,14 @@ This project focuses on the practical ideas behind RAG:
 - embedding chunks into vector space
 - retrieving semantically relevant context
 - generating grounded answers from retrieved evidence
+
+It is also a good learning project because it keeps the pipeline simple enough to understand end to end:
+
+- what data is stored
+- how retrieval works
+- why embeddings are needed
+- where citations come from
+- how an LLM can be connected to external knowledge
 
 ## Current Capabilities
 
